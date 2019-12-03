@@ -1,10 +1,14 @@
 package com.kcartoon.user.controller;
 
 import com.kcartoon.user.bean.UmsMember;
+import com.kcartoon.user.bean.UmsMemberReceiveAddress;
 import com.kcartoon.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
@@ -22,6 +26,16 @@ public class UserController {
         List<UmsMember> umsMemberlist = userService.getAllUser();
         return umsMemberlist;
     }
+
+    //根据id获得收货地址
+    @RequestMapping("getReceiveAddressByMemberId")
+    @ResponseBody
+    public List<UmsMemberReceiveAddress> getReceiveAddressByMemberId(@RequestParam("memberId") String memberId){
+        List<UmsMemberReceiveAddress> umsMemberReceiveAddressList = userService.getReceiveAddressByMemberId(memberId);
+        return umsMemberReceiveAddressList;
+    }
+
+
 
     @RequestMapping("index")
     @ResponseBody
