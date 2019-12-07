@@ -1,31 +1,20 @@
-package com.kcartoon.user.bean;
+package com.kcartoon.bean;
 
-import org.springframework.data.annotation.Id;
+import javax.persistence.Id;
+import java.io.Serializable;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+public class UmsMemberReceiveAddress implements Serializable {
 
-public class UmsMemberReceiveAddress {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
-
     private String memberId;
-
-    private String name;
-
-    private String phoneNumber;
-
-    private Integer defaultStatus;
-
+    private String  name;
+    private String  phoneNumber;
+    private int defaultStatus;
     private String postCode;
-
     private String province;
-
     private String city;
-
     private String region;
-
     private String detailAddress;
 
     public String getId() {
@@ -60,11 +49,11 @@ public class UmsMemberReceiveAddress {
         this.phoneNumber = phoneNumber;
     }
 
-    public Integer getDefaultStatus() {
+    public int getDefaultStatus() {
         return defaultStatus;
     }
 
-    public void setDefaultStatus(Integer defaultStatus) {
+    public void setDefaultStatus(int defaultStatus) {
         this.defaultStatus = defaultStatus;
     }
 

@@ -1,10 +1,10 @@
 package com.kcartoon.user.service.impl;
 
-import com.kcartoon.user.bean.UmsMember;
-import com.kcartoon.user.bean.UmsMemberReceiveAddress;
+import com.kcartoon.service.UserService;
+import com.kcartoon.bean.UmsMember;
+import com.kcartoon.bean.UmsMemberReceiveAddress;
 import com.kcartoon.user.mapper.UmsMemberReceiveAddressMapper;
 import com.kcartoon.user.mapper.UserMapper;
-import com.kcartoon.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
